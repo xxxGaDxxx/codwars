@@ -108,8 +108,16 @@ console.log(correct("51NGAP0RE"))*/
     return number % 2 === 0 ? number * 8 : number * 9
 }*/
 
+///////////////////////////////////////////////////////////////////////////////// 7 //////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// отрефакторить код
+/*function howManyDalmatians(numer){
 
+    var dogs =["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIANS!!!"];
 
+     var respond = numer <= 10 ? dogs[0]: numer <= 50 ? dogs[1] : numer === 101 ? dogs[3] : dogs[2]
+    return respond
+}*/
 
 
 
