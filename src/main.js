@@ -120,5 +120,23 @@ console.log(correct("51NGAP0RE"))*/
 }*/
 
 
+///////////////////////////////////////////////////////////////////////////////// 8 //////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Напишите алгоритм, который берет массив и перемещает все нули в конец, сохраняя порядок остальных элементов.
+//
+// moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
 
+/*function moveZeros(arr) {
+    let nam =[]
+    let num =[]
+        arr.filter(arr => arr === 0 ? num.push(arr): nam.push(arr))
+    return nam.concat(num)
+
+    console.log(num)
+    console.log(nam)
+}
+console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]))
+var moveZeros = function (arr) {
+    return arr.filter(function(x) {return x !== 0}).concat(arr.filter(function(x) {return x === 0;}));
+}*/
