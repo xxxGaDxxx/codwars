@@ -137,6 +137,73 @@ console.log(correct("51NGAP0RE"))*/
     console.log(nam)
 }
 console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]))
-var moveZeros = function (arr) {
+let moveZeros = function (arr) {
     return arr.filter(function(x) {return x !== 0}).concat(arr.filter(function(x) {return x === 0;}));
 }*/
+
+
+
+///////////////////////////////////////////////////////////////////////////////// 9 //////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// В этом ката вы создадите функцию, которая принимает список и возвращает список в обратном порядке.
+//
+// Примеры (ввод -> вывод)
+// * [1, 2, 3, 4]  -> [4, 3, 2, 1]
+// * [9, 2, 0, 7]  -> [7, 0, 2, 9]
+
+
+/*
+function reverseList(list) {
+ return list.reverse()
+}
+console.log(reverseList([7,8,9,4,5,0,]))
+*/
+
+///////////////////////////////////////////////////////////////////////////////// 10 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+
+    The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+
+setAlarm(true, true) -> false
+setAlarm(false, true) -> false
+setAlarm(false, false) -> false
+setAlarm(true, false) -> true
+*/
+
+
+/*function setAlarm(employed, vacation){
+    if(employed & vacation === false){
+        return true
+    }
+    return false
+}
+
+return employed && !vacation ? true : false;
+
+console.log(setAlarm(true, true))
+console.log(setAlarm(false, true))
+console.log(setAlarm(false, false))
+console.log(setAlarm(true, false) )*/
+
+///////////////////////////////////////////////////////////////////////////////// 11 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Implement String#digit? (in Java StringUtils.isDigit(String)), which should return true if given object is a digit (0-9), false otherwise.
+
+
+/*String.prototype.digit = function() {
+    if (this.length!=1) return false;
+    if (this[0]>='0'&&this[0]<='9')
+        return true;
+    else
+        return false;
+};*/
+
+
+
+
