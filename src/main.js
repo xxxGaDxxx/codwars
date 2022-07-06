@@ -230,3 +230,25 @@ console.log(setAlarm(true, false) )*/
 console.log(mergeArrays([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
 console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]))
 console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
+
+
+
+///////////////////////////////////////////////////////////////////////////////// 12 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Создайте метод , sayHello// принимающий в качестве входных данных имя, город и штат, чтобы приветствовать человека. Обратите внимание, что это будет массив, состоящий из одного или нескольких значений, которые должны быть соединены вместе с одним пробелом между каждым, и длина массива в тестовых примерах будет варьироваться.say_helloSayHellonamename
+//
+// Пример:
+//
+//     sayHello(['John', 'Smith'], 'Phoenix', 'Arizona')
+// Этот пример вернет строку Hello, John Smith! Welcome to Phoenix, Arizona!
+
+
+function sayHello( name, city, state ) {
+    return `Hello, ${name.reduce((acc, item) => acc + (' '+item))}! Welcome to ${city}, ${state}!`
+
+    //return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+}
+
+console.log(sayHello(['John'], 'Phoenix', 'Arizona'))
+console.log(sayHello(['Franklin','Delano','Roosevelt'], 'Chicago', 'Illinois'))
+console.log(sayHello(['Wallace','Russel','Osbourne'],'Albany','New York'))
