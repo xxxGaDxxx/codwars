@@ -232,7 +232,6 @@ console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]))
 console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 
 
-
 ///////////////////////////////////////////////////////////////////////////////// 12 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Создайте метод , sayHello// принимающий в качестве входных данных имя, город и штат, чтобы приветствовать человека. Обратите внимание, что это будет массив, состоящий из одного или нескольких значений, которые должны быть соединены вместе с одним пробелом между каждым, и длина массива в тестовых примерах будет варьироваться.say_helloSayHellonamename
@@ -243,12 +242,35 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // Этот пример вернет строку Hello, John Smith! Welcome to Phoenix, Arizona!
 
 
-function sayHello( name, city, state ) {
-    return `Hello, ${name.reduce((acc, item) => acc + (' '+item))}! Welcome to ${city}, ${state}!`
+// function sayHello( name, city, state ) {
+//     return `Hello, ${name.reduce((acc, item) => acc + (' '+item))}! Welcome to ${city}, ${state}!`
+//
+//     //return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+// }
+//
+// console.log(sayHello(['John'], 'Phoenix', 'Arizona'))
+// console.log(sayHello(['Franklin','Delano','Roosevelt'], 'Chicago', 'Illinois'))
+// console.log(sayHello(['Wallace','Russel','Osbourne'],'Albany','New York'))
 
-    //return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+
+///////////////////////////////////////////////////////////////////////////////// 13 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// пузырьковый метод
+
+function bubbleSortConcept1(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr
 }
 
-console.log(sayHello(['John'], 'Phoenix', 'Arizona'))
-console.log(sayHello(['Franklin','Delano','Roosevelt'], 'Chicago', 'Illinois'))
-console.log(sayHello(['Wallace','Russel','Osbourne'],'Albany','New York'))
+
+let mas = [10, 9, 8, 100, 5, 87, 101, 152, 1, 0, 15, 789, 2, 3]
+
+console.log(bubbleSortConcept1(mas))
