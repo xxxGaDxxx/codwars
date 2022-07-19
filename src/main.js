@@ -694,3 +694,53 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 // console.log(filteredArray([["amy", "beth", "sam"], ["dave", "sean", "peter"]], "peter"));
 // console.log(filteredArray([["trumpets", 2], ["flutes", 4], ["saxophones", 2]], 2));
+
+
+///////////////////////////////////////////////////////////////////////////////// 29 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Возвращает длину самого длинного слова в предоставленном предложении.
+//
+//     Ваш ответ должен быть числом.
+//
+// function findLongestWordLength(str) {
+//     let a = str.split(' ')
+//     console.log('aaa',a)
+//
+//     let b = 0
+//     console.log('bbb',b)
+//     for (let i = 0 ;i < a.length;i++){
+//         console.log('a.length',a.length)
+//         if(a[i].length>b){
+//             console.log('a[i].length',a[i].length,'b',b)
+//             b = a[i].length
+//         }
+//     }
+//
+//     return b
+// }
+// function findLongestWordLength(s) {
+//     return s.split(' ')
+//         .reduce(function(longest, word) {
+//             return Math.max(longest, word.length)
+//         }, 0);
+// }
+//
+// function findLongestWordLength(str) {
+//     return Math.max(...str.split(" ").map(word => word.length));
+// }
+// findLongestWordLength("The quick brown fox jumped over the lazy dogd");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
