@@ -755,9 +755,6 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
 
 
-
-
-
 ///////////////////////////////////////////////////////////////////////////////// 31 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -782,7 +779,6 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
 
-
 ///////////////////////////////////////////////////////////////////////////////// 32 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -795,17 +791,160 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 //
 //     Наконец, ["Alien", "line"]должен вернуться , trueпотому что все буквы lineприсутствуют в Alien.
 
+//
+//     function mutation(arr) {
+//     let a = arr[0].toLowerCase();
+//     let b = arr[1].toLowerCase();
+//     for (let i = 0; i < b.length; i++) {
+//         if (a.indexOf(b[i]) < 0) {
+//             console.log(a.indexOf(b[i]))
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+//
+// mutation(["hello", "hey"]);
 
-    function mutation(arr) {
-    let a = arr[0].toLowerCase();
-    let b = arr[1].toLowerCase();
-    for (let i = 0; i < b.length; i++) {
-        if (a.indexOf(b[i]) < 0) {
-            console.log(a.indexOf(b[i]))
-            return false;
-        }
+
+///////////////////////////////////////////////////////////////////////////////// 32 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.
+// * Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+
+//  const isPlainObject = (element) => {
+//      console.log(typeof element)
+//     if(!Array.isArray(element)) return true
+//     return false
+// };
+//  let dat = [1,2,3]
+//  let dataw = {1:2,2:5}
+//
+//
+// console.log('false',isPlainObject(dat))
+// console.log('true',isPlainObject(dataw))
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////// 33 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Описание задачи: Напишите функцию, которая возвращает новый объект без указанных значений.
+// * Ожидаемый результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+
+
+// const makePairs = (object) => {
+//    return  Object.entries(object)
+// };
+// Object.keys(object).map((el) => [el, object[el]])
+//
+// const populations = {
+//     russia: 146780,
+//     ukraine: 42153,
+//     belarus: 9475
+// }
+//
+//
+// console.log(makePairs(populations))
+//
+
+
+// Описание задачи: Напишите функцию, которая возвращает новый объект без указанных значений.
+// * Ожидаемый результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+
+
+// const without = (object, ...args) => {
+// let abc = [...args]
+//     console.log('abc',abc)
+//     for (let i = 0; i < abc.length ; i++) {
+//         delete object[abc[i]]
+//     }
+//     return object
+//
+//     // const newObject = { ...object };
+//     //
+//     // args.forEach((arg) => {
+//     //     delete newObject[arg];
+//     // });
+//
+// };
+//
+//
+// const data = { a: 1, b: 2, c: 3 ,d:2};
+// console.log(without(data,'b','c'))
+
+
+// Описание задачи: Напишите функцию, которая делает поверхностную проверку объекта на пустоту.
+// * Ожидаемый результат: ({}) => true,
+//     ({ a: undefined }) => true,
+//     ({ a: 1 }) => false
+//         * Пустые значения: '', null, NaN, undefined\
+
+
+// const isEmpty = (object) => {
+//     console.log(Object.values(object))
+//     let a = Object.values(object)
+//
+//     for (let i = 0; i < a.length; i++) {
+//         if (a[i] === undefined | a[i] === null | a[i] === NaN | a[i] === '') return true
+//         return false
+//     }
+//
+// };
+// // export const isEmpty = (object) => {
+// //     const objectKeys = Object.keys(object);
+// //     if (objectKeys.length === 0) {
+// //         return true;
+// //     }
+// //
+// //     return !objectKeys.filter((key) => object[key] || object[key] === 0 || object[key] === false).length;
+// // };
+//
+//
+// const data = {a: 1};
+// const data2 = {a: undefined, b: null, c: ''};
+// const data3 = {c: '', a: null};
+// console.log(isEmpty(data)); // false
+// console.log(isEmpty(data2)); // true
+// console.log(isEmpty(data3)); // true
+
+
+// Описание задачи: Напишите функцию, которая поверхностно сравнивает два объекта.
+// * Ожидаемый результат: True если объекты идентичны, false если объекты разные ({ a: 1, b: 1 }, { a: 1, b: 1 }) => true
+
+
+const isEqual = (firstObj, secondObj) => {
+    const firstObjKeys = Object.keys(firstObj);
+    const secondObjKeys = Object.keys(secondObj);
+
+    if (firstObjKeys.length !== secondObjKeys.length) {
+        return false;
     }
-    return true;
-}
+    console.log(!firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length)
+    return !firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length;
+};
 
-mutation(["hello", "hey"]);
+
+
+const data = { a: 1, b: 1 };
+const data2 = { a: 1, b: 1 };
+const data3 = { a: 1, b: 2 };
+// console.log(isEqual(data, data2)); // true
+// console.log(isEqual(data, data3)); // false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
