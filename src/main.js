@@ -806,12 +806,12 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 //
 // mutation(["hello", "hey"]);
 
-
-///////////////////////////////////////////////////////////////////////////////// 32 //////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////// 33 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.
-// * Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+
+// * Описание задачи: Напишите функцию, которая проверяет, является ли элемент именно простым объектом, а не массивом, null и т.п.
+// * Ожидаемый результат: true если это объект, false в противном случае. ({ a: 1 }) => true, ([1, 2, 3]) => false
 
 //  const isPlainObject = (element) => {
 //      console.log(typeof element)
@@ -826,19 +826,15 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // console.log('true',isPlainObject(dataw))
 
 
-
-
-///////////////////////////////////////////////////////////////////////////////// 33 //////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Описание задачи: Напишите функцию, которая возвращает новый объект без указанных значений.
-// * Ожидаемый результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+// * Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.
+// * Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
 
 
 // const makePairs = (object) => {
-//    return  Object.entries(object)
+//    // return  Object.entries(object)
+//    return  Object.keys(object).map((el) => [el, object[el]])
 // };
-// Object.keys(object).map((el) => [el, object[el]])
+//
 //
 // const populations = {
 //     russia: 146780,
@@ -848,7 +844,6 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 //
 //
 // console.log(makePairs(populations))
-//
 
 
 // Описание задачи: Напишите функцию, которая возвращает новый объект без указанных значений.
@@ -927,24 +922,221 @@ const isEqual = (firstObj, secondObj) => {
 };
 
 
-
-const data = { a: 1, b: 1 };
-const data2 = { a: 1, b: 1 };
-const data3 = { a: 1, b: 2 };
-// console.log(isEqual(data, data2)); // true
-// console.log(isEqual(data, data3)); // false
-
+// const datat = { a: 1, b: 1 };
+// const data2 = { a: 1, b: 1 };
+// const data3 = { a: 1, b: 2 };
+// console.log(isEqual(datat, data2)); // true
+// console.log(isEqual(datat, data3)); // false
 
 
+///////////////////////////////////////////////////////////////////////////////// 34 //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// Описание задачи: Напишите функцию, которая заполняет новый массив предоставленным значением.
+// * Ожидаемый результат: (3, 'a') => ['a', 'a', 'a']
+
+//
+//
+// const fill = (arraySize, value) => {
+//     let a =[]
+//     for (let i = 0; i < arraySize; i++) {
+//         a.push(value)
+//     }
+//     return a
+// }
+//
+// const data = 3;
+// const valueToFill = 'a';
+// console.log(fill(data, valueToFill)) // ['a', 'a', 'a']
 
 
+// Описание задачи: Напишите функцию, которая разворачивает массив в обратном порядке.
+// * Ожидаемый результат: [1, 2, 3] => [3, 2, 1]
 
 
+// const reverse = (array) => {
+// let b= []
+//     for (let i = array.length-1; i >= 0; i--) {
+//         b.push(array[i])
+//     }
+// return b
+// }
+//
+// const data = [1, 2, 3];
+// console.log(reverse(data)); // [3, 2, 1]
 
 
+// Описание задачи: Напишите функцию, которая очищает массив от нежелательных значений, таких как false, undefined, пустые строки, ноль, null.
+// * Ожидаемый результат: [0, 1, false, 2, undefined, '', 3, null] => [1, 2, 3]
 
 
+// const compact = (array) => {
+// // return array.filter(el=>el !== false & el!== 0 & el!== null  & el!== undefined  & el!== '')
+// return array.filter(el=>el)
+// }
+//
+// const data = [0, 1, false, 2, undefined, '', 3, null];
+// console.log(compact(data)) // [1, 2, 3]
 
+
+// * Описание задачи: Напишите функцию, возвращает новый массив без предоставленных значений. Используйте примитивные типы.
+// * Ожидаемый результат: [1, 2, 3, 1, 2] без 1, 2 => [3]
+// * Сложность задачи: 2 of 5
+
+
+// const without = (array, ...args) => {
+//     let a=[...array]
+//     for (let i = 0; i < a.length; i++) {
+//         a=a.filter(el=>el !== args[i])
+//     }
+//     return a
+// }
+// const data = [1, 2, 3, 1, 22,2];
+// console.log(without(data, 1, 2)); // [3]
+
+
+// * Описание задачи: Напишите функцию, которая убирает повторяющиеся значения.
+// * Ожидаемый результат: [1, 2, 3, 1, 2] => [1, 2, 3]
+
+// const unique = (array) => {
+//    return array.filter((el,i)=> {
+//        console.log('el',array.indexOf(el))
+//        console.log('i',i)
+//        return array.indexOf(el) === i
+//    })
+// }
+//
+// const data = [1, 2, 1, 2, 3];
+// console.log(unique(data)); // [1, 2, 3]
+
+
+// function compareNumeric(a, b) {
+//     if (a > b) return 1;
+//     if (a == b) return 0;
+//     if (a < b) return -1;
+// }
+
+// let camelize=(str)=>{
+//     let a = str.split('-').filter(el=>el !== '').map((el,i)=>i === 0 ? el : el[0].toUpperCase()+el.slice(1)).join('')
+//     console.log(a)
+//     return a
+// }
+//
+// camelize("background-color")// 'backgroundColor';
+// camelize("list-style-image")// 'listStyleImage';
+// camelize("-webkit-transition")//'WebkitTransition';
+
+// let arr = [5, 3, 8, 1,2,1,1,4];
+
+// let filterRange=(arr,a,b)=>{
+//     let arrr=[]
+//     arrr = arr.filter(el=>el>=a && el<=b)
+//     console.log(arrr)
+//     return arrr
+// }
+//
+// let filtered = filterRange(arr, 1, 4);
+//
+// console.log( filtered ); // 3,1 (совпадающие значения)
+//
+// console.log( arr ); // 5,3,8,1 (без изменений)
+
+// let arr = [5, 3, 8, 1];
+// let filterRangeInPlace=(arr,a,b)=>{
+//     for (let i = 0; i < arr.length; i++) {
+//         console.log(arr[i])
+//         if(a<=arr[i] | arr[i]<=b){
+//             arr.splice(i,1)
+//         }
+//     }
+//     return arr
+// }
+//
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+//
+// console.log( arr ); // [3, 1]
+
+
+// let arr = [5, 2, 1, -10, 8];
+//
+// arr.sort((a,b)=>b-a)
+//
+// console.log( arr ); // 8, 5, 2, 1, -10
+
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+//
+// let copySorted=(arr)=>{
+//     let b =[...arr]
+// return b.sort()
+// }
+// let sorted = copySorted(arr);
+//
+// console.log( sorted ); // CSS, HTML, JavaScript
+// console.log( arr ); // HTML, JavaScript, CSS (без изменений)
+
+
+// let arr = [-5, 5, 2, 9, 1, -10, 8];
+//
+// let minValue = (arr) => {
+//     let b = arr[0]
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] < b) {
+//             b = arr[i]
+//         }
+//     }
+//     return b
+// }
+// console.log(minValue(arr))
+//
+//
+// let maxValue = (arr) => {
+//     let b = arr[0]
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > b) {
+//             b = arr[i]
+//         }
+//     }
+//     return b
+// }
+// console.log(maxValue(arr))
+//
+// let filtering = (arr, x) => {
+//     let a = []
+//
+//     for (let i = 0; i < arr.length; i++) {
+//
+//         if (arr[i] !== x) a.push(arr[i])
+//     }
+//     return a
+// }
+// console.log(filtering(arr, 5))
+//
+//
+// let maping = (arr, x) => {
+//     let a = []
+//
+//     for (let i = 0; i < arr.length; i++) {
+//
+//         if (arr[i] === x) {
+//             a.push(arr[i] * x)
+//         }
+//         if(arr[i] !==x){a.push(arr[i])}
+//     }
+//     return a
+// }
+// console.log(maping(arr, 5))
+//
+// let findd = (arr,x)=>{
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === x) return arr[i]
+//
+//     }
+//
+// }
+// console.log(findd(arr,-5))
 
