@@ -928,6 +928,73 @@ const isEqual = (firstObj, secondObj) => {
 // console.log(isEqual(datat, data2)); // true
 // console.log(isEqual(datat, data3)); // false
 
+// let user = {}
+//
+// user.name = 'John'
+// user.surname  = 'Smith'
+// user.name = 'Pete'
+// delete user.name
+// console.log(user)
+
+
+// let schedule = {};
+//
+// let isEmpty = (obj) => {
+//     for (let key in obj) {
+//         return false
+//     }
+//     return true
+// }
+//
+//
+// console.log(isEmpty(schedule)); // true
+//
+// schedule["8:30"] = "get up";
+//
+// console.log(isEmpty(schedule)); // false
+
+
+// let salaries = {
+//     John: 100,
+//     Ann: 160,
+//     Pete: 130
+// }
+//
+// let sum=(obj)=>{
+//     let sum=0
+//     for(let i in obj){
+//         sum+= obj[i]
+//     }
+//     return sum
+// }
+// console.log(sum(salaries))
+
+// до вызова функции
+// let menu = {
+//     width: 200,
+//     height: 300,
+//     title: "My menu"
+// };
+// console.log(menu)
+//
+// let multiplyNumeric=(obj)=>{
+//     for (let key in obj){
+//         if(typeof obj[key]=== "number"){
+//             obj[key]=obj[key]*2
+//         }
+//     }
+//     return obj
+// };
+//
+// // после вызова функции
+// // menu = {
+// //     width: 400,
+// //     height: 600,
+// //     title: "My menu"
+// // };
+//
+// console.log(multiplyNumeric(menu))
+
 
 ///////////////////////////////////////////////////////////////////////////////// 34 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1139,4 +1206,85 @@ const isEqual = (firstObj, secondObj) => {
 //
 // }
 // console.log(findd(arr,-5))
+
+
+// let nums = [1, 2, 3, 4]
+//
+//
+// let runningSum = function (arr) {
+//     let val = 0
+//     let sum = arr.map(el=>{
+//         return val = el + val
+//     })
+//     return sum
+// };
+// console.log(runningSum(nums))
+
+// let nums = [0,0]
+//
+//
+// let findMaxConsecutiveOnes = function(nums) {
+//     let largestCount = 0;
+//     let currentCount = 0;
+//     for (let i = 0; i<nums.length; i++) {
+//         if (nums[i] === 0) {
+//             currentCount = 0;
+//         } else {
+//             currentCount++;
+//         };
+//         if (currentCount > largestCount) largestCount = currentCount;
+//     };
+//     return largestCount;
+// };
+// console.log(findMaxConsecutiveOnes(nums))
+
+
+// let nums = [12,345,2,6,7896]
+// // Output: 2
+// let findNumbers = function(nums) {
+//     let  a= 0
+//     // for (let i = 0; i < nums.length; i++) {
+//     //     if(String(nums[i]).length % 2===0){
+//     //         a++
+//     //     }
+//     // }
+//     // return a
+//     nums.forEach(n=>{
+//         if(String(n).length % 2===0){
+//             a++
+//         }
+//     })
+//
+// };
+//
+// console.log(findNumbers(nums))
+
+// let nums = [-4,-1,0,3,10]
+// // Вывод: [0,1,9,16,100]
+//
+//
+// let sortedSquares = function(nums) {
+// return nums.map(e=>e*e).sort((a,b)=>a-b)
+// };
+// console.log(sortedSquares(nums))7
+
+
+let arr = [1,0,2,3,0,4,5,0]
+// Вывод: [1,0,0,2,3,0,0,4]
+
+let duplicateZeros = function (arr) {
+    let a = arr.length
+    for (let i = 0; i < a; i++) {
+        if(arr[i]===0){
+            arr.splice(i, 0, 0);
+            arr.pop();
+            i++;
+
+        }
+    }
+
+    return arr
+};
+
+console.log(duplicateZeros(arr))
 
