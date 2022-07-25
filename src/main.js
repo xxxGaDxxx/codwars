@@ -1269,22 +1269,75 @@ const isEqual = (firstObj, secondObj) => {
 // console.log(sortedSquares(nums))7
 
 
-let arr = [1,0,2,3,0,4,5,0]
-// Вывод: [1,0,0,2,3,0,0,4]
+// let arr = [1,0,2,3,0,4,5,0]
+// // Вывод: [1,0,0,2,3,0,0,4]
+//
+// let duplicateZeros = function (arr) {
+//     let a = arr.length
+//     for (let i = 0; i < a; i++) {
+//         if(arr[i]===0){
+//             arr.splice(i, 0, 0);
+//             arr.pop();
+//             i++;
+//
+//         }
+//     }
+//
+//     return arr
+// };
+//
+// console.log(duplicateZeros(arr))
 
-let duplicateZeros = function (arr) {
-    let a = arr.length
-    for (let i = 0; i < a; i++) {
-        if(arr[i]===0){
-            arr.splice(i, 0, 0);
-            arr.pop();
-            i++;
+//
+// let nums = [3, 2, 2, 3]
+// let val = 3
+// // Вывод: 2, nums = [2,2,_,_]
+// // Объяснение: Ваша функция должна возвращать k = 2, причем первые два элемента nums равны 2.
+// // Неважно, что вы оставляете за возвращенным k (следовательно, это символы подчеркивания).
+//
+//
+// var removeElement = function (nums, val) {
+//     let count = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== val) {
+//             nums[count++] = nums[i];
+//             console.log()
+//         }
+//     }
+//     return count;
+// };
+// console.log(removeElement(nums, val))
 
-        }
-    }
 
-    return arr
-};
+// let nums = [1,1,2]
+//     // nums = [1,2,_]  2
+//
+// var removeDuplicates = function(nums) {
+//      nums = nums.filter((x, i) => nums.indexOf(x) === i);
+//     let a = nums.length
+//     console.log(nums)
+//   return a
+// };
+//
+// console.log(removeDuplicates(nums))
 
-console.log(duplicateZeros(arr))
+// Это ката с сайта check py.checkio.org
+//
+// Вам дан массив с положительными числами и неотрицательным числом N. Нужно найти N-ю степень элемента в массиве с индексом N. Если N вне массива, то вернуть -1. Не забывайте, что первый элемент имеет индекс 0.
+//
+// Давайте рассмотрим несколько примеров:
+//
+//     array = [1, 2, 3, 4] и N = 2, тогда результат будет 3^2 == 9;
+// array = [1, 2, 3] и N = 3, но N находится за пределами массива, поэтому результат равен -1.
+
+
+function index(array, n){
+    return n>array.length-1?-1: array[n]**n
+}
+
+console.log(index([1, 2, 3, 4],2))
+console.log(index([1, 3, 10, 100],3))
+console.log(index([6,31], 3))
+
+
 
