@@ -1331,13 +1331,54 @@ const isEqual = (firstObj, secondObj) => {
 // array = [1, 2, 3] и N = 3, но N находится за пределами массива, поэтому результат равен -1.
 
 
-function index(array, n){
-    return n>array.length-1?-1: array[n]**n
+// function index(array, n){
+//     return n>array.length-1?-1: array[n]**n
+// }
+//
+// console.log(index([1, 2, 3, 4],2))
+// console.log(index([1, 3, 10, 100],3))
+// console.log(index([6,31], 3))
+
+
+function sumMix(x) {
+    return x.reduce((acc, el) => acc + +el, 0)
 }
 
-console.log(index([1, 2, 3, 4],2))
-console.log(index([1, 3, 10, 100],3))
-console.log(index([6,31], 3))
+console.log(sumMix([9, 3, '7', '3']))
+
+function century(year) {
+    return Math.ceil(year / 100)
+}
+
+console.log(century(1705))
+console.log(century(1700))
+console.log(century(1900))
+console.log(century(89))
+
+// function sumArray(array) {
+//     let sum = 0
+//     if (array === null | array === undefined) return sum = 0
+//     if (array.length < 3) return sum = 0
+//     let a = array.reduce((acc,el)=> acc > el ? el : acc)
+//     let b = array.reduce((acc,el)=> acc < el ? el : acc)
+//     let c = array.reduce((acc,el)=> acc+el,sum)
+//     return c-(a+b)
+// }
+function sumArray(array) {
+    array = array || [];
+    return array
+        .sort((a, b) => a - b)
+        .slice(1, -1)
+        .reduce((a, b) => a + b, 0);
+}
+
+console.log(sumArray(null))
+console.log(sumArray([]))
+console.log(sumArray([3]))
+console.log(sumArray([3, 5]))
+console.log(sumArray([3,6, 5]))
+console.log(sumArray([6, 2, 1, 8, 10]))
+console.log(sumArray([-6, -20, -2, -10, -12]))
 
 
 
