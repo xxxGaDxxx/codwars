@@ -909,17 +909,17 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // Описание задачи: Напишите функцию, которая поверхностно сравнивает два объекта.
 // * Ожидаемый результат: True если объекты идентичны, false если объекты разные ({ a: 1, b: 1 }, { a: 1, b: 1 }) => true
 
-
-const isEqual = (firstObj, secondObj) => {
-    const firstObjKeys = Object.keys(firstObj);
-    const secondObjKeys = Object.keys(secondObj);
-
-    if (firstObjKeys.length !== secondObjKeys.length) {
-        return false;
-    }
-    console.log(!firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length)
-    return !firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length;
-};
+//
+// const isEqual = (firstObj, secondObj) => {
+//     const firstObjKeys = Object.keys(firstObj);
+//     const secondObjKeys = Object.keys(secondObj);
+//
+//     if (firstObjKeys.length !== secondObjKeys.length) {
+//         return false;
+//     }
+//     console.log(!firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length)
+//     return !firstObjKeys.filter((key) => firstObj[key] !== secondObj[key]).length;
+// };
 
 
 // const datat = { a: 1, b: 1 };
@@ -1340,45 +1340,62 @@ const isEqual = (firstObj, secondObj) => {
 // console.log(index([6,31], 3))
 
 
-function sumMix(x) {
-    return x.reduce((acc, el) => acc + +el, 0)
-}
-
-console.log(sumMix([9, 3, '7', '3']))
-
-function century(year) {
-    return Math.ceil(year / 100)
-}
-
-console.log(century(1705))
-console.log(century(1700))
-console.log(century(1900))
-console.log(century(89))
-
-// function sumArray(array) {
-//     let sum = 0
-//     if (array === null | array === undefined) return sum = 0
-//     if (array.length < 3) return sum = 0
-//     let a = array.reduce((acc,el)=> acc > el ? el : acc)
-//     let b = array.reduce((acc,el)=> acc < el ? el : acc)
-//     let c = array.reduce((acc,el)=> acc+el,sum)
-//     return c-(a+b)
+// function sumMix(x) {
+//     return x.reduce((acc, el) => acc + +el, 0)
 // }
-function sumArray(array) {
-    array = array || [];
-    return array
-        .sort((a, b) => a - b)
-        .slice(1, -1)
-        .reduce((a, b) => a + b, 0);
+//
+// console.log(sumMix([9, 3, '7', '3']))
+//
+// function century(year) {
+//     return Math.ceil(year / 100)
+// }
+//
+// console.log(century(1705))
+// console.log(century(1700))
+// console.log(century(1900))
+// console.log(century(89))
+//
+// // function sumArray(array) {
+// //     let sum = 0
+// //     if (array === null | array === undefined) return sum = 0
+// //     if (array.length < 3) return sum = 0
+// //     let a = array.reduce((acc,el)=> acc > el ? el : acc)
+// //     let b = array.reduce((acc,el)=> acc < el ? el : acc)
+// //     let c = array.reduce((acc,el)=> acc+el,sum)
+// //     return c-(a+b)
+// // }
+// function sumArray(array) {
+//     array = array || [];
+//     return array
+//         .sort((a, b) => a - b)
+//         .slice(1, -1)
+//         .reduce((a, b) => a + b, 0);
+// }
+//
+// console.log(sumArray(null))
+// console.log(sumArray([]))
+// console.log(sumArray([3]))
+// console.log(sumArray([3, 5]))
+// console.log(sumArray([3,6, 5]))
+// console.log(sumArray([6, 2, 1, 8, 10]))
+// console.log(sumArray([-6, -20, -2, -10, -12]))
+
+
+function naturNum(n) {
+
+    nextPrime:
+        for (let i = 2; i <= n; i++) { // Для всех i...
+
+            for (let j = 2; j < i; j++) { // проверить, делится ли число..
+                if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+            }
+            console.log( i ); // простое число
+        }
 }
 
-console.log(sumArray(null))
-console.log(sumArray([]))
-console.log(sumArray([3]))
-console.log(sumArray([3, 5]))
-console.log(sumArray([3,6, 5]))
-console.log(sumArray([6, 2, 1, 8, 10]))
-console.log(sumArray([-6, -20, -2, -10, -12]))
+console.log(naturNum(10))
+
+
 
 
 
