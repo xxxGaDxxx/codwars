@@ -1504,6 +1504,24 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // console.log(cockroachSpeed(0))
 
 
+// function makeNegative(num) {
+//     return num <= 0 ? num : -num
+// }
+//
+// console.log(makeNegative(0))
+// console.log(makeNegative(42))
+// console.log(makeNegative(-5))
+
+
+function hexToDec(hexString){
+    console.log(parseInt(hexString,16))
+}
+
+console.log(hexToDec("1"))
+console.log(hexToDec("a"))
+console.log(hexToDec("10"))
+console.log(hexToDec("FF"))
+console.log(hexToDec("-C"))
 
 
 
