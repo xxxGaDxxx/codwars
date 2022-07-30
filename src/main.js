@@ -1433,8 +1433,8 @@ console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))*/
 // console.log(fo('Opera'))
 // console.log(fo('Edge'))
 
-
-const number = +prompt('Введите число между 0 и 3', '');
+//
+// const number = +prompt('Введите число между 0 и 3', '');
 
 // if (number === 0) {
 //     alert('Вы ввели число 0');
@@ -1461,5 +1461,50 @@ const number = +prompt('Введите число между 0 и 3', '');
 //         break
 //
 // }
+
+
+
+// function launchAll(launchMissile) {
+//     for(var i = 0; i < 5; i++) {
+//         setTimeout(function() {
+//             launchMissile(i);
+//             console.log(i)
+//         }, i * 1000);
+//     }
+// }
+
+// function launchAll(launchMissile) {
+//
+//
+//     for (let i = 0; i < 5; ) {
+//         console.log(2)
+//         let a = new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 resolve(i)
+//
+//                 },10000)
+//         })
+//             a.then(res=> {
+//                 console.log(res)
+//
+//             })
+//
+//         }
+// }
+
+// console.log(launchAll(1))
+
+
+// function cockroachSpeed(s) {
+//     console.log(s === 0 ? 0 :Math.floor(s*(100000/3600)))
+// }
+//
+// console.log(cockroachSpeed(1.08))
+// console.log(cockroachSpeed(1.09))
+// console.log(cockroachSpeed(0))
+
+
+
+
 
 
